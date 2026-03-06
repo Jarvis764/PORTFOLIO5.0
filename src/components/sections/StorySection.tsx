@@ -50,7 +50,6 @@ function StoryCard({
   story,
 }: {
   story: (typeof stories)[0];
-  index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -148,8 +147,8 @@ export default function StorySection() {
 
         {/* Story cards */}
         <div className="flex flex-col gap-6">
-          {stories.map((story, i) => (
-            <StoryCard key={story.number} story={story} index={i} />
+          {stories.map((story) => (
+            <StoryCard key={story.number} story={story} />
           ))}
         </div>
       </div>
